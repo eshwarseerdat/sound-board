@@ -8,5 +8,14 @@ sounds.forEach((sound) => {
 
   btn.innerText = sound;
 
+  btn.addEventListener("click", () => {
+    audios.forEach((audio) => {
+      if (audio.id === btn.innerText) {
+        audio.load();
+        audio.play();
+      } else audio.pause();
+    });
+  });
+
   btns.appendChild(btn);
 });
